@@ -1,16 +1,27 @@
-export const App = () => {
+import { AddForm } from 'components/Form/Form';
+import { MainTitle } from './MainTitle/MainTitle';
+import { Section } from './SectionWithTitle/SectionWithTitle';
+import { ContactList } from './ContactsList/ContactsList';
+import { Filter } from './Filter/Filter';
+export default function App() {
+  console.log('app');
   return (
     <div
       style={{
-        height: '100vh',
+        width: '1000px',
+        margin: '0 auto',
+        padding: '0 50px',
         display: 'flex',
-        justifyContent: 'center',
+        flexDirection: 'column',
         alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
       }}
     >
-      React homework template
+      <MainTitle />
+      <AddForm />
+      <Filter />
+      <Section title="Contacts">
+        <ContactList />
+      </Section>
     </div>
   );
-};
+}
